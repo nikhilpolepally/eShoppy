@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-wc7%8nq_^o1qa2o5&pr9t*u%hha^4bt+7lvql9!+(kw4itx+rn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['e-shoppy.azurewebsites.net']
+ALLOWED_HOSTS = ['e-shoppy.azurewebsites.net','shoppycart.azurewebsites.net']
 
-CSRF_TRUSTED_ORIGINS=['https://*.e-shoppy.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS=['https://*.e-shoppy.azurewebsites.net','https://*.shoppycart.azurewebsites.net']
 # Application definition
 
 INSTALLED_APPS = [
