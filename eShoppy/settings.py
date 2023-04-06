@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['e-shoppy.azurewebsites.net']
 
-
+CSRF_TRUSTED_ORIGINS=['https://*.e-shoppy.azurewebsites.net']
 # Application definition
 
 INSTALLED_APPS = [
