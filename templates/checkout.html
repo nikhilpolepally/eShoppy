@@ -1,33 +1,23 @@
 {% extends 'base.html' %}
-{% block content %}
-<form method="POST">
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
-    var options = {
-        key: "{{razorpay_key}}",
-        amount: "{{order.amount}}", 
-        currency: "INR",
-        name: "{{order.name}}",
-        description: "Test Transaction",
-        image: "",
-        order_id: "{{order.provider_order_id}}",
-        callback_url: "{{callback_url}}",
-        redirect: true,
-        prefill: {
-            "name": "Nikhil",
-            "email": "nikhil@gmail.com",
-            "contact": ""
-        },
-        notes: {
-            "address": "Razorpay Corporate Office"
-        },
-        theme: {
-            "color": "#3399cc"
-        }
-    };
-    var rzp1 = new Razorpay(options);
-    rzp1.open();
-    </script>
-    <input type="hidden" custom="Hidden Element" name="hidden">
-</form>
-{% endblock %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+
+
+{% block body %}
+
+<section class="mb-4">
+
+
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Order Details</h2>
+        <!--Section description-->
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                <h2>Order Placed Successfully</h2>
+              </div>
+          
+        </div>
+</section>
+{% endblock body %}
