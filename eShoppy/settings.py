@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-wc7%8nq_^o1qa2o5&pr9t*u%hha^4bt+7lvql9!+(kw4itx+rn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['e-shoppy.azurewebsites.net']
 
 
 # Application definition
