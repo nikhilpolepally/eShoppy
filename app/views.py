@@ -83,28 +83,8 @@ def Checkout(request):
         phone = request.POST.get('phone', '')
         Orders = Order(order_items=order_items,amount=amount, name=name, delivery_email=email, user_email=request.user.email,address=address,city=city, state=state,zip_code=zip_code,phone=phone)
         Orders.save()
-
-# # RAZOR PAY INTEGRATION
-        order_id = Orders.order_id
-        print(order_id)
-        order_amount = int(amount)*100  # 9900
-        new_order_response = razorpay_client.order.create({
-            "amount": order_amount,
-            "currency": "INR",
-                        "payment_capture": "1"
-        })
-        # param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
-        return render(
-            request,
-            "checkout.html",
-            {
-                "callback_url": settings.DOMAIN + "/callback/",
-                "razorpay_key": settings.RAZORPAY_KEY_ID,
-                "order": new_order_response,
-                "order_id": order_id
-            },
-        )
-
+        messages.success(
+                request, "Order Placed Successfully")
     return render(request, 'checkout.html')
 
 
